@@ -91,6 +91,10 @@ def update(entity):
     v = flask_post_json()
     for key in v:
         myWorld.update(entity, key, v[key])
+    if request.method == 'POST':
+        print("You're creating a thing!")
+    if request.method == 'PUT':
+        print("You're updating something old...")
     return json.dumps(myWorld.get(entity))
 
 
